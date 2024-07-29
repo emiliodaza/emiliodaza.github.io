@@ -17,9 +17,9 @@ output: html_document
 <div class="row" style="padding-top: 30px;">
 <div class="col-sm-6">
 
-# **Emilio Daza**
+# **About Me**
 
-I am Emilio Daza, a Peruvian undergraduate student at Dartmouth College, majoring in Mathematics with a deep interest in Machine Learning. Currently, I am a full-time ML researcher in the EE Just Program, working under the guidance of Jack Byrne Distinguished Professor in Mathematics Peter J. Mucha and the postdoctoral research associate Rebecca Hardenbrook. My interests lie in control theory, optimization algorithms, and numerical methods.
+Hey, hey! I am Emilio Daza, a Peruvian undergraduate student at Dartmouth College, majoring in Mathematics with a deep interest in Machine Learning. Currently, I am a full-time ML researcher in the EE Just Program, working under the guidance of Jack Byrne Distinguished Professor in Mathematics Peter J. Mucha and the postdoctoral research associate Rebecca Hardenbrook. My interests lie in control theory, optimization algorithms, and numerical methods.
 
 ## How to use
 
