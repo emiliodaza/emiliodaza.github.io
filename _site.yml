@@ -1,6 +1,6 @@
 name: "Emilio's Portfolio"
 navbar:
-  title: "Emilio's Portfolio"
+  title: "ED"
   left:
     - text: "Home"
       href: index.html
