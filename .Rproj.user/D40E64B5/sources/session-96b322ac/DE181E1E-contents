@@ -1,0 +1,9 @@
+name: "Emilio's Portfolio"
+navbar:
+  title: "E.D."
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "CV"
+      href: CV.html
+output_dir: "docs"

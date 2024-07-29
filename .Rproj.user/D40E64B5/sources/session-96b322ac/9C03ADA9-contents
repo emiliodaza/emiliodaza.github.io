@@ -1,0 +1,13 @@
+---
+title: "CV"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 1
+    #code_folding: hide
+---
+
+<iframe src="images/CV.pdf" width="100%" height="500px">    </iframe>
