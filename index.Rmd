@@ -19,7 +19,7 @@ output: html_document
 
 # **Emilio Daza**
 
-This is a template example for lab journaling. Students in Matt Crump's Human Cognition and Performance Lab will use this template to learn R, and other things. Students can replace this text with more fun things. People not in my lab can use this too.
+I am Emilio Daza, a Peruvian undergraduate student at Dartmouth College, majoring in Mathematics with a deep interest in Machine Learning. Currently, I am a full-time ML researcher in the EE Just Program, working under the guidance of Jack Byrne Distinguished Professor in Mathematics Peter J. Mucha and the postdoctoral research associate Rebecca Hardenbrook. My interests lie in control theory, optimization algorithms, and numerical methods.
 
 ## How to use
 
