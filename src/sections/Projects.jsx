@@ -102,6 +102,15 @@ export const Projects = () => {
                                             </span>
                                         ))}
                                     </div>
+                                    <a
+                                        href={meta.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="md:hidden inline-flex items-center gap-2 text-xs text-muted-foreground hover:text-primary transition-colors pt-1"
+                                    >
+                                        <Github className="w-4 h-4" />
+                                        View on GitHub
+                                    </a>
                                 </div>
                             </div>
                         );

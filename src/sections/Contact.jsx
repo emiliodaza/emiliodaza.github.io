@@ -78,7 +78,7 @@ export const Contact = () => {
                     <div className="space-y-5 animate-fade-in animation-delay-200">
 
                         {/* Contact details */}
-                        <div className="glass rounded-2xl p-8 border border-border/30 space-y-6">
+                        <div className="glass rounded-2xl p-5 sm:p-8 border border-border/30 space-y-6">
                             <h3 className="text-xs tracking-[0.25em] uppercase text-primary/70 font-medium">
                                 {t.contact.detailsTitle}
                             </h3>
@@ -93,7 +93,7 @@ export const Contact = () => {
                                         </div>
                                         <div>
                                             <p className="text-xs text-muted-foreground uppercase tracking-widest mb-0.5">{item.label}</p>
-                                            <p className="text-sm text-foreground">{item.value}</p>
+                                            <p className="text-sm text-foreground break-all">{item.value}</p>
                                         </div>
                                     </div>
                                 ))}
@@ -138,7 +138,7 @@ export const Contact = () => {
                     {/* Right: Form */}
                     <form
                         onSubmit={handleSubmit}
-                        className="glass rounded-2xl p-8 border border-border/30 space-y-5 animate-fade-in animation-delay-300 relative overflow-hidden"
+                        className="glass rounded-2xl p-5 sm:p-8 border border-border/30 space-y-5 animate-fade-in animation-delay-300 relative overflow-hidden"
                     >
                         {/* Corner accents */}
                         <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-primary/25" />

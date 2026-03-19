@@ -28,7 +28,7 @@ export const translations = {
             headline1: "Building the future,",
             headline2: " one component at a time.",
             p1: "CS student at Dartmouth College with a Minor in Statistics, working across software engineering, embedded systems, and machine learning, spanning C++ firmware all the way to production ML pipelines.",
-            p2: "Co-founder of AbleTo, where I built DotSense (haptic Braille learning) and Touchless (gesture-based OS control). Also an ML Research Intern at Dartmouth's EE Just Program and a published presenter at the Joint Mathematics Meeting in Seattle.",
+            p2: "Co-founder of AbleTo, where I built DotSense (haptic Braille learning) and Touchless (gesture-based OS control). Also an ML Research Intern at Dartmouth's EE Just Program, selected to represent Dartmouth's Mathematics Department as a presenter at the Joint Mathematics Meeting in Seattle.",
             highlights: [
                 {
                     title: "Team Player",
@@ -61,7 +61,7 @@ export const translations = {
                 },
                 {
                     title: "Medical AI: Tumor Classification and Heart Disease Detection",
-                    description: "Two production-grade AI models built with PyTorch: a CNN for brain tumor classification from fMRI scans, and a feedforward neural network for heart disease prediction from structured clinical data. Published at the Joint Mathematics Meeting, Seattle.",
+                    description: "Two production-grade AI models built with PyTorch: a CNN for brain tumor classification from fMRI scans, and a feedforward neural network for heart disease prediction from structured clinical data. Presented at the Joint Mathematics Meeting in Seattle, selected to represent Dartmouth's Mathematics Department.",
                 },
             ],
         },
@@ -100,7 +100,7 @@ export const translations = {
                     period: "Jun 2024 · Aug 2024",
                     role: "Machine Learning Research Intern",
                     company: "Dartmouth College · Department of Mathematics",
-                    description: "Worked under Jack Byrne Distinguished Professor Peter Mucha and Postdoctoral Associate Rebecca Hardenbrook. Developed two AI models: a CNN for brain tumor classification from fMRI data, and a feedforward network for heart disease prediction. Findings presented at the Joint Mathematics Meeting in Seattle.",
+                    description: "Worked under Jack Byrne Distinguished Professor Peter Mucha and Postdoctoral Associate Rebecca Hardenbrook. Developed two AI models: a CNN for brain tumor classification from fMRI data, and a feedforward network for heart disease prediction. Selected to represent Dartmouth's Mathematics Department as a presenter at the Joint Mathematics Meeting in Seattle.",
                     technologies: ["Python", "PyTorch", "Machine Learning"],
                     current: false,
                 },
@@ -161,7 +161,7 @@ export const translations = {
             headline1: "Construyendo el futuro,",
             headline2: " un componente a la vez.",
             p1: "Estudiante de CS en Dartmouth College con Minor en Estadística, trabajando en ingeniería de software, sistemas embebidos y machine learning, desde firmware en C++ hasta pipelines de ML en producción.",
-            p2: "Co-fundador de AbleTo, donde construí DotSense (aprendizaje háptico de Braille) y Touchless (control del SO por gestos). También fui Pasante de Investigación en ML en el Programa EE Just de Dartmouth y presentador publicado en la Joint Mathematics Meeting en Seattle.",
+            p2: "Co-fundador de AbleTo, donde construí DotSense (aprendizaje háptico de Braille) y Touchless (control del SO por gestos). También fui Pasante de Investigación en ML en el Programa EE Just de Dartmouth, seleccionado para representar al Departamento de Matemáticas de Dartmouth como presentador en la Joint Mathematics Meeting en Seattle.",
             highlights: [
                 {
                     title: "Trabajo en Equipo",
@@ -194,7 +194,7 @@ export const translations = {
                 },
                 {
                     title: "IA Médica: Clasificación de Tumores y Detección de Enfermedades Cardíacas",
-                    description: "Dos modelos de IA de nivel productivo construidos con PyTorch: una CNN para clasificación de tumores cerebrales a partir de imágenes fMRI, y una red neuronal feedforward para predicción de enfermedades cardíacas con datos clínicos estructurados. Publicado en la Joint Mathematics Meeting, Seattle.",
+                    description: "Dos modelos de IA de nivel productivo construidos con PyTorch: una CNN para clasificación de tumores cerebrales a partir de imágenes fMRI, y una red neuronal feedforward para predicción de enfermedades cardíacas con datos clínicos estructurados. Presentado en la Joint Mathematics Meeting en Seattle, seleccionado para representar al Departamento de Matemáticas de Dartmouth.",
                 },
             ],
         },
@@ -233,7 +233,7 @@ export const translations = {
                     period: "Jun 2024 · Ago 2024",
                     role: "Pasante de Investigación en Machine Learning",
                     company: "Dartmouth College · Departamento de Matemáticas",
-                    description: "Trabajé bajo la dirección del Profesor Distinguido Jack Byrne, Peter Mucha, y la Asociada Postdoctoral Rebecca Hardenbrook. Desarrollé dos modelos de IA: una CNN para clasificación de tumores cerebrales a partir de datos fMRI, y una red feedforward para predicción de enfermedades cardíacas. Resultados presentados en la Joint Mathematics Meeting en Seattle.",
+                    description: "Trabajé bajo la dirección del Profesor Distinguido Jack Byrne, Peter Mucha, y la Asociada Postdoctoral Rebecca Hardenbrook. Desarrollé dos modelos de IA: una CNN para clasificación de tumores cerebrales a partir de datos fMRI, y una red feedforward para predicción de enfermedades cardíacas. Seleccionado para representar al Departamento de Matemáticas de Dartmouth como presentador en la Joint Mathematics Meeting en Seattle.",
                     technologies: ["Python", "PyTorch", "Machine Learning"],
                     current: false,
                 },
