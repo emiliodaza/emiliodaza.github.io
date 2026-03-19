@@ -74,10 +74,12 @@ export const Hero = () => {
                                     {t.hero.cta} <ArrowRight className="w-5 h-5" />
                                 </Button>
                             </a>
-                            <AnimatedBorderButton className="h-11 px-8 text-sm font-medium">
-                                <Download className="w-5 h-5" />
-                                {t.hero.cv}
-                            </AnimatedBorderButton>
+                            <a href="/cv.pdf" download>
+                                <AnimatedBorderButton className="h-11 px-8 text-sm font-medium">
+                                    <Download className="w-5 h-5" />
+                                    {t.hero.cv}
+                                </AnimatedBorderButton>
+                            </a>
                         </div>
 
                         {/* Social links */}
