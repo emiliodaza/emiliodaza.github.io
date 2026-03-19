@@ -1,6 +1,7 @@
 import { Button } from '@/components/Button';
 import { ArrowRight, Download, Github, Linkedin, Instagram, ChevronDown } from 'lucide-react';
 import { AnimatedBorderButton } from '../components/AnimatedBorderButton';
+import { useLanguage } from '../context/LanguageContext';
 
 const skills = [
     "Python", "PyTorch", "Scikit-Learn", "SQL",
@@ -10,6 +11,8 @@ const skills = [
 ]
 
 export const Hero = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="relative min-h-screen flex items-center overflow-hidden">
 
@@ -43,25 +46,24 @@ export const Hero = () => {
                         <div className="animate-fade-in">
                             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-primary/40 text-sm text-primary font-medium tracking-widest uppercase">
                                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                                Software Engineer
+                                {t.hero.badge}
                             </span>
                         </div>
 
                         {/* Headline */}
                         <div className="space-y-4">
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                                Turning{" "}
-                                <span className="text-primary glow-text">ideas</span>
+                                {t.hero.headline1}{" "}
+                                <span className="text-primary glow-text">{t.hero.headline2}</span>
                                 <br />
-                                into working
+                                {t.hero.headline3}
                                 <br />
                                 <span className="font-serif italic font-normal text-white">
-                                    systems.
+                                    {t.hero.headline4}
                                 </span>
                             </h1>
                             <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200 leading-relaxed">
-                                Hi, I'm <span className="text-foreground font-medium">Emilio Sebastian Daza Vigo</span>, CS Major and Statistics Minor at Dartmouth College.
-                                I specialize in AI and Robotics, building systems that sit at the intersection of intelligent software and physical hardware.
+                                {t.hero.description}
                             </p>
                         </div>
 
@@ -69,18 +71,18 @@ export const Hero = () => {
                         <div className="flex flex-wrap items-center gap-4 animate-fade-in animation-delay-300">
                             <a href="#contact">
                                 <Button size="lg" className="py-4 text-lg shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow">
-                                    Contact Me <ArrowRight className="w-5 h-5" />
+                                    {t.hero.cta} <ArrowRight className="w-5 h-5" />
                                 </Button>
                             </a>
                             <AnimatedBorderButton className="h-11 px-8 text-sm font-medium">
                                 <Download className="w-5 h-5" />
-                                Download CV
+                                {t.hero.cv}
                             </AnimatedBorderButton>
                         </div>
 
                         {/* Social links */}
                         <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-                            <span className="text-sm text-muted-foreground tracking-wide">Follow:</span>
+                            <span className="text-sm text-muted-foreground tracking-wide">{t.hero.follow}</span>
                             {[
                                 { icon: Github,    href: "https://github.com/emiliodaza" },
                                 { icon: Linkedin,  href: "https://www.linkedin.com/in/emilio-sebastian-daza-vigo-48197b31b/" },
@@ -139,14 +141,12 @@ export const Hero = () => {
 
                             {/* Floating info chips */}
                             <div className="absolute right-2 sm:-right-10 top-6 sm:top-12 glass-strong px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-primary/30 text-xs font-medium animate-fade-in animation-delay-800 shadow-xl whitespace-nowrap z-10">
-                                <span className="text-primary">CS & Statistics</span>
-                                <span className="text-foreground/80"> @ Dartmouth</span>
+                                <span className="text-primary">{t.hero.chipRight1}</span>
+                                <span className="text-foreground/80">{t.hero.chipRight2}</span>
                             </div>
                             <div className="absolute left-2 sm:-left-10 bottom-16 sm:bottom-24 glass-strong px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-primary/30 text-xs font-medium animate-fade-in animation-delay-800 shadow-xl z-10 max-w-[180px] sm:max-w-none sm:whitespace-nowrap leading-snug">
-                                Co-founder + Lead Software Engineer ·{" "}
-                                <span className="text-primary">AbleTo</span>
+                                {t.hero.chipLeft}
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -154,7 +154,7 @@ export const Hero = () => {
                 {/* ── Skills marquee ── */}
                 <div className="mt-16 md:mt-28 animate-fade-in animation-delay-600">
                     <p className="text-xs text-muted-foreground mb-6 text-center uppercase tracking-widest">
-                        Technologies I work with
+                        {t.hero.skillsLabel}
                     </p>
                     <div className="relative overflow-hidden">
                         <div className="absolute left-0 top-0 bottom-0 w-28 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
@@ -179,7 +179,7 @@ export const Hero = () => {
                     href="#about"
                     className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
-                    <span className="text-xs uppercase tracking-widest">Scroll</span>
+                    <span className="text-xs uppercase tracking-widest">{t.hero.scroll}</span>
                     <ChevronDown className="w-5 h-5 animate-bounce" />
                 </a>
             </div>

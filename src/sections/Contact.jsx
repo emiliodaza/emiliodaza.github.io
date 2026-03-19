@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { Send, Mail, MapPin, Github, Linkedin, Instagram, CheckCircle } from "lucide-react";
-
-const socials = [
-    { icon: Github,    href: "https://github.com/emiliodaza",                                                       label: "GitHub"    },
-    { icon: Linkedin,  href: "https://www.linkedin.com/in/emilio-sebastian-daza-vigo-48197b31b/",                   label: "LinkedIn"  },
-    { icon: Instagram, href: "https://www.instagram.com/emiliosdv/",                                               label: "Instagram" },
-];
+import { useLanguage } from "../context/LanguageContext";
 
 const FORMSPREE_ID = "xojkrqlw";
 
 export const Contact = () => {
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-    const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+    const [status, setStatus] = useState("idle");
+    const { t } = useLanguage();
+
+    const socials = [
+        { icon: Github,    href: "https://github.com/emiliodaza",                                                     label: "GitHub"   },
+        { icon: Linkedin,  href: "https://www.linkedin.com/in/emilio-sebastian-daza-vigo-48197b31b/",                 label: "LinkedIn" },
+        { icon: Instagram, href: "https://www.instagram.com/emiliosdv/",                                             label: "Instagram"},
+    ];
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -56,17 +58,17 @@ export const Contact = () => {
                 {/* Section label */}
                 <div className="text-center animate-fade-in mb-12">
                     <span className="text-xs tracking-[0.3em] uppercase text-primary/70 font-medium">
-                        04 · Get In Touch
+                        {t.contact.label}
                     </span>
                 </div>
 
                 <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-foreground">
-                        Let's build something{" "}
-                        <span className="font-serif italic font-normal text-white">together.</span>
+                        {t.contact.headline1}{" "}
+                        <span className="font-serif italic font-normal text-white">{t.contact.headline2}</span>
                     </h2>
                     <p className="text-muted-foreground animate-fade-in animation-delay-200 max-w-lg mx-auto leading-relaxed">
-                        Whether you have a project in mind, a question, or just want to connect. I would love to hear from you.
+                        {t.contact.description}
                     </p>
                 </div>
 
@@ -78,12 +80,12 @@ export const Contact = () => {
                         {/* Contact details */}
                         <div className="glass rounded-2xl p-8 border border-border/30 space-y-6">
                             <h3 className="text-xs tracking-[0.25em] uppercase text-primary/70 font-medium">
-                                Contact Details
+                                {t.contact.detailsTitle}
                             </h3>
                             <div className="space-y-5">
                                 {[
-                                    { icon: Mail,    label: "Email",    value: "emilio.sebastian.daza.vigo.27@dartmouth.edu" },
-                                    { icon: MapPin,  label: "Location", value: "Hanover, NH"                                   },
+                                    { icon: Mail,   label: t.contact.emailLabel,    value: "emilio.sebastian.daza.vigo.27@dartmouth.edu" },
+                                    { icon: MapPin, label: t.contact.locationLabel, value: "Hanover, NH" },
                                 ].map((item, i) => (
                                     <div key={i} className="flex items-center gap-4 group">
                                         <div className="w-10 h-10 rounded-xl bg-primary/8 border border-border/40 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 group-hover:border-primary/30 transition-all duration-300">
@@ -98,7 +100,7 @@ export const Contact = () => {
                             </div>
 
                             <div className="pt-5 border-t border-border/25">
-                                <p className="text-xs text-muted-foreground uppercase tracking-widest mb-4">Socials</p>
+                                <p className="text-xs text-muted-foreground uppercase tracking-widest mb-4">{t.contact.socialsLabel}</p>
                                 <div className="flex gap-3">
                                     {socials.map((s, i) => (
                                         <a
@@ -124,11 +126,11 @@ export const Contact = () => {
                             <div className="flex items-center gap-3 mb-3 relative">
                                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                                 <span className="text-xs text-primary uppercase tracking-widest font-semibold">
-                                    Available for Opportunities
+                                    {t.contact.availabilityTitle}
                                 </span>
                             </div>
                             <p className="text-sm text-muted-foreground leading-relaxed relative">
-                                Open to internships and full-time software engineering roles starting 2026.
+                                {t.contact.availabilityText}
                             </p>
                         </div>
                     </div>
@@ -143,41 +145,41 @@ export const Contact = () => {
                         <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-primary/25" />
 
                         <h3 className="text-xs tracking-[0.25em] uppercase text-primary/70 font-medium mb-6">
-                            Send a Message
+                            {t.contact.formTitle}
                         </h3>
 
                         <div className="space-y-1.5">
-                            <label className="text-xs text-muted-foreground uppercase tracking-widest">Name</label>
+                            <label className="text-xs text-muted-foreground uppercase tracking-widest">{t.contact.nameLabel}</label>
                             <input
                                 type="text"
                                 required
                                 value={formData.name}
                                 onChange={e => setFormData(p => ({ ...p, name: e.target.value }))}
-                                placeholder="Your name"
+                                placeholder={t.contact.namePlaceholder}
                                 className={inputClass}
                             />
                         </div>
 
                         <div className="space-y-1.5">
-                            <label className="text-xs text-muted-foreground uppercase tracking-widest">Email</label>
+                            <label className="text-xs text-muted-foreground uppercase tracking-widest">{t.contact.emailInputLabel}</label>
                             <input
                                 type="email"
                                 required
                                 value={formData.email}
                                 onChange={e => setFormData(p => ({ ...p, email: e.target.value }))}
-                                placeholder="your@email.com"
+                                placeholder={t.contact.emailPlaceholder}
                                 className={inputClass}
                             />
                         </div>
 
                         <div className="space-y-1.5">
-                            <label className="text-xs text-muted-foreground uppercase tracking-widest">Message</label>
+                            <label className="text-xs text-muted-foreground uppercase tracking-widest">{t.contact.messageLabel}</label>
                             <textarea
                                 required
                                 rows={5}
                                 value={formData.message}
                                 onChange={e => setFormData(p => ({ ...p, message: e.target.value }))}
-                                placeholder="Tell me about your project or idea..."
+                                placeholder={t.contact.messagePlaceholder}
                                 className={`${inputClass} resize-none`}
                             />
                         </div>
@@ -187,17 +189,17 @@ export const Contact = () => {
                             disabled={status === "sending"}
                             className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 disabled:opacity-60 disabled:cursor-not-allowed text-white rounded-xl py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-primary/35 hover:-translate-y-0.5"
                         >
-                            {status === "sent" && <><CheckCircle className="w-4 h-4" /> Message Sent</>}
-                            {status === "error" && <><Send className="w-4 h-4" /> Something went wrong, try again</>}
-                            {status === "sending" && <>Sending...</>}
-                            {status === "idle" && <><Send className="w-4 h-4" /> Send Message</>}
+                            {status === "sent"    && <><CheckCircle className="w-4 h-4" /> {t.contact.sent}</>}
+                            {status === "error"   && <><Send className="w-4 h-4" /> {t.contact.error}</>}
+                            {status === "sending" && <>{t.contact.sending}</>}
+                            {status === "idle"    && <><Send className="w-4 h-4" /> {t.contact.send}</>}
                         </button>
                     </form>
                 </div>
 
                 {/* Footer note */}
                 <p className="text-center text-xs text-muted-foreground/50 mt-16 tracking-wide">
-                    Designed and built by Emilio Sebastian Daza Vigo · 2025
+                    {t.contact.footer}
                 </p>
             </div>
         </section>

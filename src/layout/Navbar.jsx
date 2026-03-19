@@ -1,23 +1,25 @@
 import { Button } from "../components/Button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-
-const navLinks = [
-    { href: "#about",      label: "About"      },
-    { href: "#projects",   label: "Projects"   },
-    { href: "#experience", label: "Experience" },
-    { href: "#contact",    label: "Contact"    },
-];
+import { useLanguage } from "../context/LanguageContext";
 
 export const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const { language, toggleLanguage, t } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 50);
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const navLinks = [
+        { href: "#about",      label: t.nav.about      },
+        { href: "#projects",   label: t.nav.projects   },
+        { href: "#experience", label: t.nav.experience },
+        { href: "#contact",    label: t.nav.contact    },
+    ];
 
     return (
         <header
@@ -27,7 +29,7 @@ export const Navbar = () => {
                     : "bg-transparent py-5"
             }`}
         >
-            <nav className="container mx-auto px-6 flex items-center justify-between">
+            <nav className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
                 {/* Logo */}
                 <a href="#" className="flex items-center gap-1.5 group">
                     <span className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
@@ -51,21 +53,49 @@ export const Navbar = () => {
                     </div>
                 </div>
 
-                {/* Desktop CTA */}
-                <div className="hidden md:block">
+                {/* Desktop right: language toggle + CTA */}
+                <div className="hidden md:flex items-center gap-3">
+                    {/* Language toggle */}
+                    <button
+                        onClick={toggleLanguage}
+                        className="flex items-center gap-1 glass rounded-full border border-border/40 overflow-hidden text-xs font-semibold tracking-widest"
+                        aria-label="Toggle language"
+                    >
+                        <span className={`px-3 py-1.5 transition-all duration-200 ${language === "en" ? "bg-primary text-white" : "text-muted-foreground hover:text-foreground"}`}>
+                            EN
+                        </span>
+                        <span className={`px-3 py-1.5 transition-all duration-200 ${language === "es" ? "bg-primary text-white" : "text-muted-foreground hover:text-foreground"}`}>
+                            ES
+                        </span>
+                    </button>
+
                     <a href="#contact">
-                        <Button size="sm">Contact Me</Button>
+                        <Button size="sm">{t.nav.contactMe}</Button>
                     </a>
                 </div>
 
-                {/* Mobile toggle */}
-                <button
-                    className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
-                    onClick={() => setIsMobileMenuOpen(prev => !prev)}
-                    aria-label="Toggle menu"
-                >
-                    {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-                </button>
+                {/* Mobile: language toggle + hamburger */}
+                <div className="md:hidden flex items-center gap-2">
+                    <button
+                        onClick={toggleLanguage}
+                        className="flex items-center glass rounded-full border border-border/40 overflow-hidden text-xs font-semibold tracking-widest"
+                        aria-label="Toggle language"
+                    >
+                        <span className={`px-2.5 py-1 transition-all duration-200 ${language === "en" ? "bg-primary text-white" : "text-muted-foreground"}`}>
+                            EN
+                        </span>
+                        <span className={`px-2.5 py-1 transition-all duration-200 ${language === "es" ? "bg-primary text-white" : "text-muted-foreground"}`}>
+                            ES
+                        </span>
+                    </button>
+                    <button
+                        className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setIsMobileMenuOpen(prev => !prev)}
+                        aria-label="Toggle menu"
+                    >
+                        {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+                    </button>
+                </div>
             </nav>
 
             {/* Mobile menu */}
@@ -84,7 +114,7 @@ export const Navbar = () => {
                         ))}
                         <div className="pt-2">
                             <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                                <Button className="w-full">Contact Me</Button>
+                                <Button className="w-full">{t.nav.contactMe}</Button>
                             </a>
                         </div>
                     </div>

@@ -1,41 +1,7 @@
 import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
-const experiences = [
-    {
-        period: "Aug 2024 · Present",
-        role: "Co-Founder & Lead Software Engineer",
-        company: "AbleTo",
-        description: "Led the full software stack for DotSense, a Python/Tkinter GUI with real-time voice interaction, and implemented C++ firmware for Arduino-based haptic Braille output. Scaled the team cross-institutionally by recruiting from NYU, Texas A&M, and UNI Peru, serving as the bridge between hardware and software.",
-        technologies: ["Python", "C++", "Arduino", "Microcontroller", "Circuits"],
-        current: true,
-    },
-    {
-        period: "Oct 2025 · Mar 2026",
-        role: "Software Engineer",
-        company: "Dartmouth Center for Technology and Behavioral Health",
-        description: "Part-time Flutter Developer on Evergreen, a student wellness platform. Improved UI/UX, built a dual Developer/User mode for internal testing, and expanded desktop compatibility to Linux. Participated in discussions around ethical ML integration for behavioral pattern analysis.",
-        technologies: ["Flutter", "Dart"],
-        current: false,
-    },
-    {
-        period: "Sep 2025 · Nov 2025",
-        role: "Grader, Probability Theory",
-        company: "Dartmouth College · Department of Mathematics",
-        description: "Evaluated student work for MATH 20 under Prof. Nianqiao Ju (Ph.D., Harvard University). Assessed correctness, clarity, and mathematical reasoning while providing structured feedback to support student learning.",
-        technologies: ["Probability Theory"],
-        current: false,
-    },
-    {
-        period: "Jun 2024 · Aug 2024",
-        role: "Machine Learning Research Intern",
-        company: "Dartmouth College · Department of Mathematics",
-        description: "Worked under Jack Byrne Distinguished Professor Peter Mucha and Postdoctoral Associate Rebecca Hardenbrook. Developed two AI models: a CNN for brain tumor classification from fMRI data, and a feedforward network for heart disease prediction. Findings presented at the Joint Mathematics Meeting in Seattle.",
-        technologies: ["Python", "PyTorch", "Machine Learning"],
-        current: false,
-    },
-];
-
-const ExperienceCard = ({ exp, isActive }) => (
+const ExperienceCard = ({ exp, isActive, currentLabel }) => (
     <div
         className={`glass rounded-2xl p-6 border transition-all duration-300 ${
             isActive
@@ -47,7 +13,7 @@ const ExperienceCard = ({ exp, isActive }) => (
             <span className="text-xs text-muted-foreground font-mono tracking-wide">{exp.period}</span>
             {exp.current && (
                 <span className="text-xs px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/25 font-medium">
-                    Current
+                    {currentLabel}
                 </span>
             )}
         </div>
@@ -75,6 +41,7 @@ const ExperienceCard = ({ exp, isActive }) => (
 
 export const Experience = () => {
     const [activeIndex, setActiveIndex] = useState(null);
+    const { t } = useLanguage();
 
     return (
         <section id="experience" className="py-20 md:py-32 relative overflow-hidden">
@@ -84,28 +51,28 @@ export const Experience = () => {
                 {/* Section label */}
                 <div className="animate-fade-in mb-12">
                     <span className="text-xs tracking-[0.3em] uppercase text-primary/70 font-medium">
-                        03 · Experience
+                        {t.experience.label}
                     </span>
                 </div>
 
                 <div className="mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4 animate-fade-in animation-delay-100 text-foreground">
-                        Relevant experience{" "}
+                        {t.experience.headline1}{" "}
                         <span className="font-serif italic font-normal text-white">
-                            to my role.
+                            {t.experience.headline2}
                         </span>
                     </h2>
                     <p className="text-muted-foreground animate-fade-in animation-delay-200">
-                        A timeline of professional milestones and contributions.
+                        {t.experience.description}
                     </p>
                 </div>
 
                 {/* Mobile: left-side timeline */}
                 <div className="md:hidden mt-10 border-l border-primary/25 pl-6 space-y-8">
-                    {experiences.map((exp, index) => (
+                    {t.experience.items.map((exp, index) => (
                         <div key={index} className="relative">
                             <div className="absolute -left-[25px] top-6 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-background" />
-                            <ExperienceCard exp={exp} isActive={false} />
+                            <ExperienceCard exp={exp} isActive={false} currentLabel={t.experience.current} />
                         </div>
                     ))}
                 </div>
@@ -116,7 +83,7 @@ export const Experience = () => {
                     <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
 
                     <div className="space-y-12">
-                        {experiences.map((exp, index) => {
+                        {t.experience.items.map((exp, index) => {
                             const isLeft = index % 2 === 0;
                             const isActive = activeIndex === index;
 
@@ -129,7 +96,7 @@ export const Experience = () => {
                                 >
                                     {/* Left side */}
                                     <div className="w-1/2 pr-14">
-                                        {isLeft && <ExperienceCard exp={exp} isActive={isActive} />}
+                                        {isLeft && <ExperienceCard exp={exp} isActive={isActive} currentLabel={t.experience.current} />}
                                     </div>
 
                                     {/* Center dot */}
@@ -145,7 +112,7 @@ export const Experience = () => {
 
                                     {/* Right side */}
                                     <div className="w-1/2 pl-14">
-                                        {!isLeft && <ExperienceCard exp={exp} isActive={isActive} />}
+                                        {!isLeft && <ExperienceCard exp={exp} isActive={isActive} currentLabel={t.experience.current} />}
                                     </div>
                                 </div>
                             );
