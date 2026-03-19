@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0c0f;
+  --color-foreground: #ededef;
+
+  --color-card: #101318;
+  --color-surface: #141820;
+
+  --color-primary: #e8334a;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #181d26;
+  --color-secondary-foreground: #e8334a;
+
+  --color-muted: #1b2029;
+  --color-muted-foreground: #9ea3b0;
+
+  --color-border: #252932;
+
+  --radius: 0.75rem;
+
+  --color-highlight: #ff4d65;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 55%, transparent);
+    backdrop-filter: blur(20px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  }
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    backdrop-filter: blur(28px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
+  }
+  .glow-text {
+    text-shadow:
+      0 0 20px color-mix(in srgb, var(--color-primary) 90%, transparent),
+      0 0 60px color-mix(in srgb, var(--color-primary) 45%, transparent),
+      0 0 120px color-mix(in srgb, var(--color-primary) 18%, transparent);
+  }
+  /* Card that glows on hover */
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+  .card-hover:hover {
+    border-color: color-mix(in srgb, var(--color-primary) 35%, transparent);
+    box-shadow: 0 0 32px color-mix(in srgb, var(--color-primary) 12%, transparent);
+    transform: translateY(-2px);
+  }
+  /* Active glow for experience cards */
+  .shadow-glow {
+    box-shadow: 0 0 32px color-mix(in srgb, var(--color-primary) 18%, transparent);
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.9s ease-out both;
+  }
+
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-700 { animation-delay: 700ms; }
+  .animation-delay-800 { animation-delay: 800ms; }
+
+  /* Marquee */
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* Animated border (AnimatedBorderButton) */
+  @keyframes animated-border {
+    0%   { stroke-dashoffset: 400; }
+    100% { stroke-dashoffset: -550; }
+  }
+
+  .group:hover .animated-border-path {
+    animation: animated-border 1.5s linear infinite;
+  }
+
+  .animated-border:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 8%, transparent);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 28px color-mix(in srgb, var(--color-primary) 16%, transparent);
+  }
+
+  /* Timeline */
+  .timeline-glow {
+    box-shadow:
+      0 0 40px color-mix(in srgb, var(--color-primary) 30%, transparent),
+      0 0 80px color-mix(in srgb, var(--color-primary) 15%, transparent);
+  }
+
+  /* Grid overlay */
+  .bg-grid {
+    background-image:
+      linear-gradient(color-mix(in srgb, var(--color-primary) 4%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--color-primary) 4%, transparent) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  /* Scan line (profile image) */
+  @keyframes scan {
+    0%   { top: -4%; opacity: 0; }
+    5%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { top: 104%; opacity: 0; }
+  }
+
+  .scan-line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--color-primary) 80%, transparent),
+      transparent
+    );
+    box-shadow: 0 0 14px color-mix(in srgb, var(--color-primary) 65%, transparent);
+    animation: scan 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Float (profile image) */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-12px); }
+  }
+
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  /* Drifting background orbs */
+  @keyframes drift-1 {
+    0%, 100% { transform: translate(0px,   0px)   scale(1);    opacity: 0.6; }
+    25%       { transform: translate(40px, -50px)  scale(1.06); opacity: 0.85; }
+    50%       { transform: translate(-25px,-70px)  scale(0.94); opacity: 0.55; }
+    75%       { transform: translate(50px, -20px)  scale(1.03); opacity: 0.75; }
+  }
+
+  @keyframes drift-2 {
+    0%, 100% { transform: translate(0px,  0px)   scale(1);    opacity: 0.55; }
+    25%       { transform: translate(-50px,40px)  scale(0.93); opacity: 0.75; }
+    50%       { transform: translate(30px, 60px)  scale(1.10); opacity: 0.45; }
+    75%       { transform: translate(-40px,25px)  scale(0.97); opacity: 0.65; }
+  }
+
+  @keyframes drift-3 {
+    0%, 100% { transform: translate(0px,   0px)  scale(1); opacity: 0.4; }
+    33%       { transform: translate(60px,  35px) scale(1.12); opacity: 0.6; }
+    66%       { transform: translate(-40px,-45px) scale(0.88); opacity: 0.35; }
+  }
+
+  .animate-drift-1 { animation: drift-1 16s ease-in-out infinite; }
+  .animate-drift-2 { animation: drift-2 20s ease-in-out infinite; }
+  .animate-drift-3 { animation: drift-3 13s ease-in-out infinite; }
+
+  /* Pulse ring (HUD) */
+  @keyframes ring-pulse {
+    0%, 100% { transform: scale(1);    opacity: 0.35; }
+    50%       { transform: scale(1.08); opacity: 0.08; }
+  }
+
+  .animate-ring-pulse {
+    animation: ring-pulse 3s ease-in-out infinite;
+  }
+}
