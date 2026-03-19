@@ -53,9 +53,9 @@
   }
   .glow-text {
     text-shadow:
-      0 0 20px color-mix(in srgb, var(--color-primary) 90%, transparent),
-      0 0 60px color-mix(in srgb, var(--color-primary) 45%, transparent),
-      0 0 120px color-mix(in srgb, var(--color-primary) 18%, transparent);
+      0 0 20px color-mix(in srgb, var(--color-primary) 45%, transparent),
+      0 0 60px color-mix(in srgb, var(--color-primary) 22%, transparent),
+      0 0 120px color-mix(in srgb, var(--color-primary) 9%, transparent);
   }
   /* Card that glows on hover */
   .card-hover {

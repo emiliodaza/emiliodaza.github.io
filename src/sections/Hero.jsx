@@ -143,8 +143,8 @@ export const Hero = () => {
 
                             {/* Floating info chips */}
                             <div className="absolute right-2 sm:-right-10 top-6 sm:top-12 glass-strong px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-primary/30 text-xs font-medium animate-fade-in animation-delay-800 shadow-xl whitespace-nowrap z-10">
-                                <span className="text-primary">{t.hero.chipRight1}</span>
-                                <span className="text-foreground/80">{t.hero.chipRight2}</span>
+                                <span className="text-white">{t.hero.chipRight1}</span>
+                                <span className="text-white/80">{t.hero.chipRight2}</span>
                             </div>
                             <div className="absolute left-2 sm:-left-10 bottom-16 sm:bottom-24 glass-strong px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-primary/30 text-xs font-medium animate-fade-in animation-delay-800 shadow-xl z-10 max-w-[180px] sm:max-w-none sm:whitespace-nowrap leading-snug">
                                 {t.hero.chipLeft}
