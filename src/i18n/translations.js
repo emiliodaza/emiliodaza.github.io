@@ -18,17 +18,17 @@ export const translations = {
             cv: "Download CV",
             follow: "Follow:",
             chipRight1: "CS & Statistics",
-            chipRight2: " @ Dartmouth",
-            chipLeft: "Co-founder + Lead Software Engineer · AbleTo",
+            chipRight2: " @ Dartmouth College",
+            chipLeft: "Co-Founder CEO & Lead Software Engineer · AbleTo",
             skillsLabel: "Technologies I work with",
             scroll: "Scroll",
         },
         about: {
             label: "01 · About Me",
             headline1: "Building the future,",
-            headline2: " one component at a time.",
-            p1: "CS student at Dartmouth College with a Minor in Statistics, working across software engineering, embedded systems, and machine learning, spanning C++ firmware all the way to production ML pipelines.",
-            p2: "Co-founder of AbleTo, where I built DotSense (haptic Braille learning) and Touchless (gesture-based OS control). Also an ML Research Intern at Dartmouth's EE Just Program, selected to represent Dartmouth's Mathematics Department as a presenter at the Joint Mathematics Meeting in Seattle.",
+            headline2: " one layer at a time.",
+            p1: "CS student at Dartmouth College with a Minor in Statistics, working across software engineering, embedded systems, and machine learning, spanning C++ firmware all the way to end-to-end ML pipelines.",
+            p2: "Co-founder of AbleTo, where I built DotSense (haptic Braille learning). Also an ML Research Intern at Dartmouth's EE Just Program, selected to represent Dartmouth's Mathematics Department as a presenter at the Joint Mathematics Meeting in Seattle.",
             highlights: [
                 {
                     title: "Team Player",
@@ -61,7 +61,7 @@ export const translations = {
                 },
                 {
                     title: "Medical AI: Tumor Classification and Heart Disease Detection",
-                    description: "Two production-grade AI models built with PyTorch: a CNN for brain tumor classification from fMRI scans, and a feedforward neural network for heart disease prediction from structured clinical data. Presented at the Joint Mathematics Meeting in Seattle, selected to represent Dartmouth's Mathematics Department.",
+                    description: "Two AI models built with PyTorch: a CNN for brain tumor classification from fMRI scans, and a feedforward neural network for heart disease prediction from structured clinical data. Presented at the Joint Mathematics Meeting in Seattle, selected to represent Dartmouth's Mathematics Department.",
                 },
             ],
         },
@@ -73,10 +73,10 @@ export const translations = {
             current: "Current",
             items: [
                 {
-                    period: "Aug 2024 · Present",
-                    role: "Co-Founder & Lead Software Engineer",
+                    period: "Mar 2024 · Present",
+                    role: "Co-Founder CEO & Lead Software Engineer",
                     company: "AbleTo",
-                    description: "Led the full software stack for DotSense, a Python/Tkinter GUI with real-time voice interaction, and implemented C++ firmware for Arduino-based haptic Braille output. Scaled the team cross-institutionally by recruiting from NYU, Texas A&M, and UNI Peru, serving as the bridge between hardware and software.",
+                    description: "Led the full software stack for DotSense, a Python/Tkinter GUI with real-time voice interaction, and implemented C++ firmware for Arduino-based haptic Braille output. Scaled the team cross-institutionally by recruiting from multiple universities including NYU and Texas A&M, serving as the bridge between hardware and software.",
                     technologies: ["Python", "C++", "Arduino", "Microcontroller", "Circuits"],
                     current: true,
                 },
@@ -128,7 +128,7 @@ export const translations = {
             sending: "Sending...",
             sent: "Message Sent",
             error: "Something went wrong, try again",
-            footer: "Designed and built by Emilio Sebastian Daza Vigo · 2025",
+            footer: "Built by Emilio Sebastian Daza Vigo · 2026",
         },
     },
 
@@ -151,17 +151,17 @@ export const translations = {
             cv: "Descargar CV",
             follow: "Seguir:",
             chipRight1: "CS & Estadística",
-            chipRight2: " @ Dartmouth",
-            chipLeft: "Co-fundador + Lead Software Engineer · AbleTo",
+            chipRight2: " @ Dartmouth College",
+            chipLeft: "Co-Fundador CEO & Lead Software Engineer · AbleTo",
             skillsLabel: "Tecnologías con las que trabajo",
             scroll: "Bajar",
         },
         about: {
             label: "01 · Sobre Mí",
             headline1: "Construyendo el futuro,",
-            headline2: " un componente a la vez.",
-            p1: "Estudiante de CS en Dartmouth College con Minor en Estadística, trabajando en ingeniería de software, sistemas embebidos y machine learning, desde firmware en C++ hasta pipelines de ML en producción.",
-            p2: "Co-fundador de AbleTo, donde construí DotSense (aprendizaje háptico de Braille) y Touchless (control del SO por gestos). También fui Pasante de Investigación en ML en el Programa EE Just de Dartmouth, seleccionado para representar al Departamento de Matemáticas de Dartmouth como presentador en la Joint Mathematics Meeting en Seattle.",
+            headline2: " una capa a la vez.",
+            p1: "Estudiante de CS en Dartmouth College con Minor en Estadística, trabajando en ingeniería de software, sistemas embebidos y machine learning, desde firmware en C++ hasta pipelines de ML de extremo a extremo.",
+            p2: "Co-fundador de AbleTo, donde construí DotSense (aprendizaje háptico de Braille). También fui Pasante de Investigación en ML en el Programa EE Just de Dartmouth, seleccionado para representar al Departamento de Matemáticas de Dartmouth como presentador en la Joint Mathematics Meeting en Seattle.",
             highlights: [
                 {
                     title: "Trabajo en Equipo",
@@ -194,7 +194,7 @@ export const translations = {
                 },
                 {
                     title: "IA Médica: Clasificación de Tumores y Detección de Enfermedades Cardíacas",
-                    description: "Dos modelos de IA de nivel productivo construidos con PyTorch: una CNN para clasificación de tumores cerebrales a partir de imágenes fMRI, y una red neuronal feedforward para predicción de enfermedades cardíacas con datos clínicos estructurados. Presentado en la Joint Mathematics Meeting en Seattle, seleccionado para representar al Departamento de Matemáticas de Dartmouth.",
+                    description: "Dos modelos de IA construidos con PyTorch: una CNN para clasificación de tumores cerebrales a partir de imágenes fMRI, y una red neuronal feedforward para predicción de enfermedades cardíacas con datos clínicos estructurados. Presentado en la Joint Mathematics Meeting en Seattle, seleccionado para representar al Departamento de Matemáticas de Dartmouth.",
                 },
             ],
         },
@@ -206,10 +206,10 @@ export const translations = {
             current: "Actual",
             items: [
                 {
-                    period: "Ago 2024 · Presente",
-                    role: "Co-Fundador e Ingeniero de Software Principal",
+                    period: "Mar 2024 · Presente",
+                    role: "Co-Fundador CEO e Ingeniero de Software Principal",
                     company: "AbleTo",
-                    description: "Lideré el stack de software completo para DotSense, una GUI en Python/Tkinter con interacción de voz en tiempo real, e implementé firmware en C++ para salida Braille háptica basada en Arduino. Escalé el equipo de forma interinstitucional reclutando en NYU, Texas A&M y UNI Perú, siendo el puente entre hardware y software.",
+                    description: "Lideré el stack de software completo para DotSense, una GUI en Python/Tkinter con interacción de voz en tiempo real, e implementé firmware en C++ para salida Braille háptica basada en Arduino. Escalé el equipo de forma interinstitucional reclutando en múltiples universidades incluyendo NYU y Texas A&M, siendo el puente entre hardware y software.",
                     technologies: ["Python", "C++", "Arduino", "Microcontrolador", "Circuitos"],
                     current: true,
                 },
@@ -261,7 +261,7 @@ export const translations = {
             sending: "Enviando...",
             sent: "Mensaje Enviado",
             error: "Algo salió mal, intenta de nuevo",
-            footer: "Diseñado y construido por Emilio Sebastian Daza Vigo · 2025",
+            footer: "Construido por Emilio Sebastian Daza Vigo · 2026",
         },
     },
 };

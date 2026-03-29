@@ -17,7 +17,7 @@ export const Hero = () => {
         <section className="relative min-h-screen flex items-center overflow-hidden">
 
             {/* ── Background layers ── */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 pointer-events-none">
                 <img src="/bg.jpg" alt="background" className="w-full h-full object-cover opacity-40" />
             </div>
 
@@ -108,11 +108,11 @@ export const Hero = () => {
                         <div className="relative max-w-sm mx-auto animate-float">
 
                             {/* Ambient glow behind card */}
-                            <div className="absolute inset-[-10%] rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-3xl" />
+                            <div className="absolute inset-[-10%] rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-3xl pointer-events-none" />
 
                             {/* Pulse rings */}
-                            <div className="absolute inset-[-6%] rounded-3xl border border-primary/15 animate-ring-pulse" />
-                            <div className="absolute inset-[-12%] rounded-3xl border border-primary/8 animate-ring-pulse" style={{ animationDelay: "1s" }} />
+                            <div className="absolute inset-[-6%] rounded-3xl border border-primary/15 animate-ring-pulse pointer-events-none" />
+                            <div className="absolute inset-[-12%] rounded-3xl border border-primary/8 animate-ring-pulse pointer-events-none" style={{ animationDelay: "1s" }} />
 
                             {/* HUD corner brackets */}
                             <div className="absolute -top-4 -left-4 w-10 h-10 border-t-2 border-l-2 border-primary" />
