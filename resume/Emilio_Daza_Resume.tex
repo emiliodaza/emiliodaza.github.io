@@ -1,0 +1,200 @@
+% !TeX program = xelatex
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[margin=0.50in]{geometry}
+\usepackage{iftex}
+\usepackage{fontspec}
+\setmainfont{Charter}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+
+% ATS-compatible text extraction under pdfLaTeX
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\urlstyle{same}
+\raggedright
+
+\setlist[itemize]{
+  leftmargin=0.17in,
+  itemsep=0.4pt,
+  topsep=1.0pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\resumesection}[1]{%
+  \vspace{3.1pt}%
+  {\large\bfseries #1}\par
+  \vspace{0.9pt}%
+  \hrule height 0.4pt
+  \vspace{2.0pt}%
+}
+
+\newcommand{\subheading}[4]{%
+  \textbf{#1}\hfill #2\\
+  \textit{#3}\hfill \textit{#4}\par
+  \vspace{-1.5pt}%
+}
+
+\newcommand{\projectheading}[2]{%
+  \textbf{#1}\hfill #2\par
+  \vspace{-1.5pt}%
+}
+
+\begin{document}
+
+% -------------------- Header --------------------
+\begin{center}
+  {\Huge\bfseries Emilio Daza}\\[-1pt]
+  {\small
+  Hanover, NH
+  \;|\;
+  +1 (603) 443-3235
+  \;|\;
+  \href{mailto:emilio.sebastian.daza.vigo.27@dartmouth.edu}{emilio.sebastian.daza.vigo.27@dartmouth.edu}
+  \;|\;
+  \href{https://emiliodaza.com}{emiliodaza.com}}
+\end{center}
+\vspace{-8pt}
+
+{\small
+Dartmouth computer science student graduating June 2027 with experience
+building cross-platform applications, backend systems, intelligent
+payment-routing models, and healthcare ML pipelines for heart-disease
+prediction and brain-tumor MRI classification.
+}
+
+% -------------------- Education --------------------
+\resumesection{Education}
+
+\subheading
+  {Dartmouth College}{Hanover, NH}
+  {B.A. in Computer Science, Minor in Statistics}{Expected Jun. 2027}
+
+{\small
+\textbf{Relevant Coursework:}
+Computer Architecture, Compilers, Discrete Mathematics, Robotics Design \&
+Programming, Computer Vision, Multivariate Statistics \& Statistical Learning, and Probability \& Statistical Inference.\\
+\textbf{Beca Cometa Scholar (2023):}
+1 of 2 students selected nationwide in Peru for a full undergraduate scholarship
+at a top U.S. university.
+}
+
+% -------------------- Technical Skills --------------------
+\resumesection{Technical Skills}
+
+{\small
+\textbf{Languages:}
+Python, TypeScript, JavaScript, SQL, Java, C, C++, Dart, R\\
+\textbf{Frameworks:}
+React Native, Expo, Flutter, React, PyTorch, Gymnasium, R-Studio\\
+\textbf{Backend/Data:}
+ClickHouse, PostgreSQL, Supabase, Firebase, REST APIs, Edge Functions,
+row-level security\\
+\textbf{Tools/Systems:}
+AWS, Docker, Linux, Git, GitHub, NetworkX, ROS 2, Gazebo
+}
+
+% -------------------- Experience --------------------
+\resumesection{Experience}
+
+\subheading
+  {Izipay}{Lima, Peru}
+  {Machine Learning Engineer Intern}{Jun. 2026 -- Aug. 2026}
+
+\begin{itemize}
+  \item Developed and evaluated an RL-based intelligent payment-routing
+  prototype in a synthetic simulator for Izipay, a leading Peruvian processor
+  serving 1.2M+ merchants; now adapting the architecture by querying
+  transaction-node data from an AWS-hosted ClickHouse instance using SQL.
+
+  \item Modeled processor selection under outages, latency variation, technical
+  failures, and payment rejection as a Markov decision process; developed a
+  custom Gymnasium environment and PyTorch Double DQN agent over a NetworkX
+  topology with action masking, experience replay, and target networks.
+
+  \item Evaluated the learned policy across 1,000 seeded episodes generated
+  from synthetic routing probabilities: 92.3\% simulated approval and
+  178.4\,ms mean latency; automated JSON/Matplotlib reporting and presented
+  results to senior strategy and business-solutions leaders.
+\end{itemize}
+
+\subheading
+  {Algoverse AI Research Program}{Remote}
+  {Machine Learning Researcher}{Jun. 2026 -- Sep. 2026}
+
+\begin{itemize}
+  \item Developing a formal research project on whether finite prefixes of
+  ordinary RL training can distinguish reward misspecification from
+  task-relevant observation insufficiency, and what minimum diagnostic
+  interventions make the failure modes identifiable.
+
+  \item Collaborating with a three-person ML research team under the mentorship
+  of a Google Cloud AI \& Infrastructure Software Engineer; selected for a
+  12-week publication-oriented program with a competitive 30\% tuition
+  scholarship.
+\end{itemize}
+
+\subheading
+  {Dartmouth Center for Technology and Behavioral Health}{Hanover, NH}
+  {Software Engineer, Cross-Platform App}{Nov. 2025 -- Mar. 2026}
+
+\begin{itemize}
+  \item Implemented and validated Flutter desktop functionality on Arch Linux
+  for Evergreen, a research-backed platform supporting personalized student
+  well-being.
+
+  \item Designed a dual-mode interface separating internal diagnostic and
+  developer workflows from the participant-facing user experience.
+\end{itemize}
+
+\subheading
+  {Dartmouth College, E.E. Just Research Program}{Hanover, NH}
+  {Funded Machine Learning Research Intern}{Jun. 2024 -- Aug. 2024}
+
+\begin{itemize}
+  \item Selected as 1 of 8 first-year students for a funded summer program;
+  built PyTorch feedforward and CNN pipelines for heart-disease prediction and
+  four-class brain-tumor MRI classification, then presented the research at the largest math conference in the world: the Joint Mathematics Meeting in 2025.
+\end{itemize}
+
+% -------------------- Selected Projects --------------------
+\resumesection{Selected Projects}
+
+\projectheading
+  {Thyme -- Co-Founder \& Founding Software Engineer}
+  {Apr. 2026 -- Present}
+
+\begin{itemize}
+  \item Built a TypeScript React Native/Expo application for iOS and Android
+  with design and public-health teammates; distributed an iOS beta through
+  TestFlight and an Android APK for internal testing.
+
+  \item Designed a Supabase/PostgreSQL backend with authentication, row-level
+  security, Edge Functions, community and menu data, and remote version
+  controls; implemented persistent profiles, settings, and nutrition logs.
+
+  \item Integrated OpenAI APIs for multimodal meal and menu analysis, bilingual
+  speech transcription and text-to-speech, and generated cooking guidance;
+  developed location-aware dining discovery using Google Places and
+  campus-menu data sources.
+\end{itemize}
+
+\projectheading
+  {Robotics Mapping, Planning, and Perception Systems}
+  {Spring 2026}
+
+\begin{itemize}
+  \item Implemented ROS 2 systems in Gazebo and Stage for odometry, coordinate
+  transforms, LiDAR processing, and occupancy-grid mapping; a YOLO11n and FastSAM perception pipeline producing target bounding boxes and segmentation masks from camera video streams; BFS, DFS, and A* planners plus a LiDAR mapper
+  using Bresenham raycasting, log-odds updates, and dynamically expanding
+  occupancy grids.
+\end{itemize}
+
+\end{document}

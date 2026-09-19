@@ -166,7 +166,8 @@ h1 em, h2 em { color: #cfaa88; font-weight: 400; }
 .contact-section h2 { font-size: clamp(70px, 7.1vw, 110px); line-height: .91; max-width: 610px; margin-bottom: 22px; }
 .contact-description { max-width: 525px; font-size: 14px; line-height: 1.75; color: #c0ccc1; }
 .contact-actions { display: flex; flex-direction: column; justify-content: center; }
-.contact-email { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 0; border-bottom: 1px solid #829083; font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(26px, 2.7vw, 38px); transition: color .2s; }
+.contact-email { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 0; overflow-wrap: anywhere; padding: 22px 0; border-bottom: 1px solid #829083; font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(26px, 2.7vw, 38px); transition: color .2s; }
+.contact-email svg { flex: 0 0 auto; }
 .contact-email:hover, .contact-links a:hover { color: #d6ad88; }
 .contact-links { display: flex; flex-wrap: wrap; gap: 22px; padding-top: 30px; }
 .contact-links a { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; transition: color .2s; }
@@ -244,7 +245,7 @@ h1 em, h2 em { color: #cfaa88; font-weight: 400; }
   .skills-panel { padding: 26px 23px; }
   .skill-row { grid-template-columns: 1fr; gap: 5px; }
   .contact-section h2 { font-size: 77px; }
-  .contact-email { font-size: 28px; }
+  .contact-email { font-size: clamp(21px, 5vw, 28px); }
   .footer-bottom { flex-wrap: wrap; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
